@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green0"
+    tools:context=".ui.foodpage.FoodActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/green2"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_food"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        app:layout_constraintDimensionRatio="1:0.8"
+        app:srcCompat="@drawable/image_telor"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/gradient_background_resep"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_food" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_body"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/background_food_page"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_start"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="52dp"
+            android:tint="@color/green2"
+            app:srcCompat="@drawable/ic_outline_star_outline_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+            android:id="@+id/tv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.8"
+            app:layout_constraintTop_toBottomOf="@+id/ic_start"
+            app:layout_constraintStart_toStartOf="@+id/ic_start"
+            app:layout_constraintEnd_toEndOf="@+id/ic_start"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_time"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:tint="@color/green2"
+            app:srcCompat="@drawable/ic_baseline_access_time_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ic_start"
+            app:layout_constraintEnd_toStartOf="@+id/ic_thums"/>
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 Menit"
+            app:layout_constraintTop_toBottomOf="@+id/ic_time"
+            app:layout_constraintStart_toStartOf="@+id/ic_time"
+            app:layout_constraintEnd_toEndOf="@+id/ic_time"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_thums"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="52dp"
+            android:tint="@color/green2"
+            app:srcCompat="@drawable/ic_outline_thumbs_up_down_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/tv_thumbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mudah"
+            app:layout_constraintTop_toBottomOf="@+id/ic_thums"
+            app:layout_constraintStart_toStartOf="@+id/ic_thums"
+            app:layout_constraintEnd_toEndOf="@+id/ic_thums"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="Nasi Goreng"
+                    android:textColor="@color/black"
+                    android:textSize="32sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:textSize="12sp"
+                    android:text="Resep Rumahan Indonesia"
+                    android:textColor="@color/black" />
+
+          <com.google.android.material.button.MaterialButton
+              android:id="@+id/btn_bahan"
+              android:layout_width="120dp"
+              android:layout_height="40dp"
+              android:textAllCaps="false"
+              android:textSize="12sp"
+              android:layout_marginStart="32dp"
+              android:layout_marginTop="16dp"
+              app:cornerRadius="20dp"
+              android:text="Bahan"/>
+
+                <TextView
+                    android:id="@+id/tv_bahan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="32dp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
