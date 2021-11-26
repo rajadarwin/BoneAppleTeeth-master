@@ -1,6 +1,8 @@
 package com.app.boneappleteeth;
 
 import android.os.Bundle;
+import android.os.Debug;
+import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -11,6 +13,13 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.app.boneappleteeth.databinding.ActivityMainBinding;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +41,50 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+        apiTest();
     }
 
+    void apiTest(){
+        bahanApiCall();
+        resepApiCall();
+    }
+
+    void bahanApiCall(){
+        BahanServices bahanServices = BahanRepository.create();
+        bahanServices.getBahan().enqueue(new Callback<List<BahanModel>>() {
+            @Override
+            public void onResponse(Call<List<BahanModel>> call, Response<List<BahanModel>> response) {
+                for(BahanModel bahan : response.body()){
+                    Log.d("ID : ", String.valueOf(bahan.getId_bahan()));
+                    Log.d("Nama : ", bahan.getNama());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<BahanModel>> call, Throwable t) {
+                Log.e("Error", "Error:", t);
+            }
+        });
+    }
+
+    void resepApiCall(){
+        ResepServices resepServices = ResepRepository.create();
+        resepServices.getResep().enqueue(new Callback<List<ResepModel>>() {
+            @Override
+            public void onResponse(Call<List<ResepModel>> call, Response<List<ResepModel>> response) {
+                for(ResepModel resep : response.body()) {
+                    Log.d("ID : ", String.valueOf(resep.getId_menu()));
+                    Log.d("Nama : ", resep.getNama());
+                    for(BahanModel bahan : resep.getBahan()){
+                        Log.d("Bahan :" , bahan.getNama());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ResepModel>> call, Throwable t) {
+                Log.e("Error", "Error:", t);
+            }
+        });
+    }
 }
