@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void apiTest(){
-        bahanApiCall();
-        resepApiCall();
+        //bahanApiCall();
+        //resepApiCall();
     }
 
     void bahanApiCall(){

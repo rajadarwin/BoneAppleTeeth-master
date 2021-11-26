@@ -16,16 +16,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_food"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scaleType="center"
         app:layout_constraintDimensionRatio="1:0.8"
-        app:srcCompat="@drawable/image_telor"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/image_telor" />
 
     <View
         android:id="@+id/view"
@@ -117,6 +119,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_nama_resep"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
