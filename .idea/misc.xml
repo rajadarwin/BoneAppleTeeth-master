@@ -3,18 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
-
-        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.17291666666666666" />
-        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/activity_food.xml" value="0.2786458333333333" />
-        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/activity_main.xml" value="0.15677083333333333" />
-        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/activity_register.xml" value="0.2879999900124293" />
-        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/fragment_home.xml" value="0.15677083333333333" />
-        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/fragment_profile.xml" value="0.15677083333333333" />
-        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/fragment_search.xml" value="0.15677083333333333" />
-        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/item_news.xml" value="0.15677083333333333" />
-        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/item_resep.xml" value="0.15677083333333333" />
-        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.17291666666666666" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/activity_food.xml" value="0.1829861111111111" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/activity_main.xml" value="0.1829861111111111" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/activity_register.xml" value="0.1829861111111111" />
@@ -24,7 +12,8 @@
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/fragment_search.xml" value="0.1829861111111111" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/item_news.xml" value="0.1829861111111111" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/item_resep.xml" value="0.1829861111111111" />
-
+        <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1829861111111111" />
+        <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19375" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/Pemrograman-Aplikasi-Mobile/BoneAppleTeeth-master/app/src/main/res/layout/activity_food.xml" value="0.2" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/Pemrograman-Aplikasi-Mobile/BoneAppleTeeth-master/app/src/main/res/layout/fragment_profile.xml" value="0.17896174863387979" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/Pemrograman-Aplikasi-Mobile/BoneAppleTeeth-master/app/src/main/res/layout/fragment_search.xml" value="0.17896174863387979" />
