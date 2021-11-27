@@ -29,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String string1 = getColoredSpanned("Belum punya akun?", "#000000");
+        String string1 = getColoredSpanned("Sudah punya akun?", "#000000");
         String string2 = getColoredSpanned("Log in", "#4E9F3D");
         binding.tvLogin.setText(Html.fromHtml(string1 + " " + string2));
 
