@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BahanRepository {
-    static String BASE_URL = "https://api.hadehzone.xyz/index.php/";
+    static String BASE_URL = "https://api.hadehzone.xyz/";
 
     static final BahanServices create(){
         Retrofit retrofit = new Retrofit.Builder()
