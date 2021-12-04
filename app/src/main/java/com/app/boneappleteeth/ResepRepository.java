@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ResepRepository {
-    static String BASE_URL = "https://api.hadehzone.xyz/index.php/";
+    static String BASE_URL = "https://api.hadehzone.xyz/";
 
     public static final ResepServices create(){
         Retrofit retrofit = new Retrofit.Builder()
