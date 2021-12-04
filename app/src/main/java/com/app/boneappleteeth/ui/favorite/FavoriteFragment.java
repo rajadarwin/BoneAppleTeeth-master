@@ -64,7 +64,7 @@ public class FavoriteFragment extends Fragment {
         favorite.setId(0);
         favorite.setTitle("Tes test");
         favorite.setMenit("10 Menit");
-        favorite.setImagePath(R.drawable.image_ngantuk);
+        favorite.setImagePath(R.drawable.image_buah);
         favoriteList.add(favorite);
 
         favorite = new Favorite();
@@ -78,7 +78,7 @@ public class FavoriteFragment extends Fragment {
         favorite.setId(0);
         favorite.setTitle("Tes test");
         favorite.setMenit("10 Menit");
-        favorite.setImagePath(R.drawable.image_sehat);
+        favorite.setImagePath(R.drawable.image_buah);
         favoriteList.add(favorite);
 
         adapter.notifyDataSetChanged();

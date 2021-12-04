@@ -1,5 +1,6 @@
-package com.app.boneappleteeth.ui.register;
+package com.app.boneappleteeth.ui.login;
 
+import static androidx.core.content.ContextCompat.startActivity;
 import static com.app.boneappleteeth.TextMultipleColor.getColoredSpanned;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,21 +17,20 @@ import android.view.View;
 import com.app.boneappleteeth.MainActivity;
 import com.app.boneappleteeth.R;
 import com.app.boneappleteeth.TextMultipleColor;
-import com.app.boneappleteeth.databinding.ActivityRegisterBinding;
+import com.app.boneappleteeth.databinding.ActivityLoginBinding;
 
-public class RegisterActivity extends AppCompatActivity {
-
-    private ActivityRegisterBinding binding;
+public class LoginActivity extends AppCompatActivity{
+    private ActivityLoginBinding binding;
     private boolean visible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String string1 = getColoredSpanned("Sudah punya akun?", "#000000");
-        String string2 = getColoredSpanned("Log in", "#4E9F3D");
+        String string1 = getColoredSpanned("Belum punya akun?", "#000000");
+        String string2 = getColoredSpanned("Register", "#4E9F3D");
         binding.tvLogin.setText(Html.fromHtml(string1 + " " + string2));
 
         binding.ivVisible.setOnClickListener(new View.OnClickListener() {
@@ -48,10 +48,10 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        binding.btnRegister.setOnClickListener(new View.OnClickListener() {
+        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
         });
     }

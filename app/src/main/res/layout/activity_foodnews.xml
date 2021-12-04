@@ -46,24 +46,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ic_start"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="52dp"
-            android:tint="@color/green2"
-            app:srcCompat="@drawable/ic_outline_star_outline_24"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-        <TextView
-            android:id="@+id/tv_rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4.8"
-            app:layout_constraintTop_toBottomOf="@+id/ic_start"
-            app:layout_constraintStart_toStartOf="@+id/ic_start"
-            app:layout_constraintEnd_toEndOf="@+id/ic_start"/>
+
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ic_time"
@@ -71,37 +54,19 @@
             android:layout_height="32dp"
             android:layout_marginTop="16dp"
             android:tint="@color/green2"
-            app:srcCompat="@drawable/ic_baseline_access_time_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ic_start"
-            app:layout_constraintEnd_toStartOf="@+id/ic_thums"/>
+            app:srcCompat="@drawable/ic_baseline_access_time_24" />
+
         <TextView
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10 Menit"
+            android:text="--------- FOOD NEWS ---------"
             app:layout_constraintTop_toBottomOf="@+id/ic_time"
             app:layout_constraintStart_toStartOf="@+id/ic_time"
             app:layout_constraintEnd_toEndOf="@+id/ic_time"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ic_thums"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="52dp"
-            android:tint="@color/green2"
-            app:srcCompat="@drawable/ic_outline_thumbs_up_down_24"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-        <TextView
-            android:id="@+id/tv_thumbs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mudah"
-            app:layout_constraintTop_toBottomOf="@+id/ic_thums"
-            app:layout_constraintStart_toStartOf="@+id/ic_thums"
-            app:layout_constraintEnd_toEndOf="@+id/ic_thums"/>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -119,40 +84,31 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_nama_resep"
+                    android:id="@+id/tv_judul_berita"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
-                    android:text="Nasi Goreng"
+                    android:text="Judul Berita"
                     android:textColor="@color/black"
                     android:textSize="32sp" />
                 <TextView
+                    android:id="@+id/tv_tanggal_berita"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:textSize="12sp"
-                    android:text="Resep Rumahan Indonesia"
+                    android:text="Tanggal berita"
                     android:textColor="@color/black" />
 
-          <com.google.android.material.button.MaterialButton
-              android:id="@+id/btn_bahan"
-              android:layout_width="180dp"
-              android:layout_height="40dp"
-              android:textAllCaps="false"
-              android:textSize="12sp"
-              android:layout_marginStart="32dp"
-              android:layout_marginTop="16dp"
-              app:cornerRadius="20dp"
-              android:text="Langkah-langkah"/>
-
                 <TextView
-                    android:id="@+id/tv_bahan"
+                    android:id="@+id/isi_berita"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="36dp"
                     android:layout_marginEnd="32dp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:text="Isi berita"/>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
