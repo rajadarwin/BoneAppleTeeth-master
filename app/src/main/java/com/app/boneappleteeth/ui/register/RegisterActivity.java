@@ -12,22 +12,33 @@ import android.text.Html;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.Button;
 
 import com.app.boneappleteeth.MainActivity;
 import com.app.boneappleteeth.R;
 import com.app.boneappleteeth.TextMultipleColor;
 import com.app.boneappleteeth.databinding.ActivityRegisterBinding;
+import com.app.boneappleteeth.ui.login.LoginActivity;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
     private boolean visible = false;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        button = (Button) findViewById(R.id.tv_login);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLogin();
+            }
+        });
 
         String string1 = getColoredSpanned("Sudah punya akun?", "#000000");
         String string2 = getColoredSpanned("Log in", "#4E9F3D");
@@ -54,5 +65,9 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
             }
         });
+    }
+    public void openLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }

@@ -267,7 +267,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
     </com.google.android.material.card.MaterialCardView>
 
-    <TextView
+    <Button
         android:id="@+id/tv_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -275,6 +275,9 @@
         android:layout_marginBottom="32dp"
         android:text="Sudah punya akun ? Log in"
         android:textStyle="bold"
+        android:background="#0000ffff"
+        android:textColor="#000000"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
