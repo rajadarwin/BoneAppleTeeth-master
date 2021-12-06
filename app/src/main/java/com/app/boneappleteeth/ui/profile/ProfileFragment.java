@@ -27,6 +27,7 @@ public class ProfileFragment extends Fragment {
 
     TextView tv_name;
     TextView tv_sosmed;
+    TextView tv_alamat;
     private SharedPreferences sharedPreferences;
     final String PREF_NAME = "ACCOUNT";
 
@@ -83,9 +84,11 @@ public class ProfileFragment extends Fragment {
 
         tv_name = inf.findViewById(R.id.tv_name);
         tv_sosmed = inf.findViewById(R.id.tv_sosmed);
-
+        tv_alamat = inf.findViewById(R.id.tv_alamat);
+        Log.d("Alamat", account.getAlamat());
         tv_name.setText(account.getUsername());
         tv_sosmed.setText(account.getEmail());
+        tv_alamat.setText(account.getAlamat());
 
         return inf;
     }
