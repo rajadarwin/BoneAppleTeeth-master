@@ -13,4 +13,7 @@ public interface AccountServices {
     @POST("/login")
     Call<FullAccountModel>  login(@Body LoginModel loginModel);
 
+    @POST("/update")
+    Call<ResponseModel> update(@Body AccountUpdateModel accountUpdateModel);
+
 }
