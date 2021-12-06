@@ -1,6 +1,8 @@
 package com.app.boneappleteeth.ui.profile;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -46,6 +48,9 @@ public class ProfileFragment extends Fragment {
     private String mParam2;
     private Button button;
     private Button buttonEdit;
+
+    Button btnclose;
+    AlertDialog.Builder builder;
 
 
 
@@ -131,6 +136,31 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 openEditProfile();
+            }
+        });
+
+        btnclose =  (Button) inf.findViewById(R.id.tv_label_delete);
+        builder = new AlertDialog.Builder(getActivity());
+
+        btnclose.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                builder.setTitle("Alert")
+                .setMessage("Apakah Anda yakin ingin menghapus akun?")
+                        .setCancelable(true)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        })
+                        .show();
             }
         });
 
