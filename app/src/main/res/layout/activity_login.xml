@@ -7,6 +7,18 @@
     android:background="@color/green0"
     tools:context=".ui.login.LoginActivity">
 
+    <ImageView
+        android:layout_width="201dp"
+        android:layout_height="193dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="2dp"
+        android:src="@drawable/cookiehat"
+        app:layout_constraintBottom_toTopOf="@+id/cv_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"

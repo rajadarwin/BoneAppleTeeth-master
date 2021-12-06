@@ -7,18 +7,19 @@
         <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.1" />
         <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1" />
         <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/drawable/splash_brand_logo.xml" value="0.1" />
+        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/activity_register.xml" value="0.22598870056497175" />
         <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/activity_splash.xml" value="0.15579710144927536" />
         <entry key="..\:/Program/AndroidProject/BoneAppleTeeth-master/app/src/main/res/layout/splash.xml" value="0.1431159420289855" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/font/rufina.xml" value="0.203125" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/activity_food.xml" value="0.1829861111111111" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/activity_foodnews.xml" value="0.2" />
-        <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/activity_login.xml" value="0.176" />
+        <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/activity_main.xml" value="0.1829861111111111" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/activity_register.xml" value="0.1829861111111111" />
-        <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/activity_tambahresep.xml" value="0.264" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/fragment_favorite.xml" value="0.176" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/fragment_home.xml" value="0.1829861111111111" />
-        <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
+        <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/fragment_profile.xml" value="0.1829861111111111" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/fragment_search.xml" value="0.1829861111111111" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/item_news.xml" value="0.1829861111111111" />
         <entry key="..\:/Users/Raja Darwin/AndroidStudioProjects/BoneAppleTeeth-master/app/src/main/res/layout/item_resep.xml" value="0.1829861111111111" />
