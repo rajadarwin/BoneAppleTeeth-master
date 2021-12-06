@@ -17,13 +17,21 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.app.boneappleteeth.AccountModel;
+import com.app.boneappleteeth.AccountRepository;
+import com.app.boneappleteeth.AccountServices;
+import com.app.boneappleteeth.DeleteAccountModel;
 import com.app.boneappleteeth.R;
+import com.app.boneappleteeth.ResponseModel;
 import com.app.boneappleteeth.ui.editprofile.EditProfileActivity;
 import com.app.boneappleteeth.ui.login.LoginActivity;
 import com.app.boneappleteeth.ui.register.RegisterActivity;
 import com.google.gson.Gson;
 
 import org.w3c.dom.Text;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -151,7 +159,7 @@ public class ProfileFragment extends Fragment {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-
+                                delete();
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -165,5 +173,35 @@ public class ProfileFragment extends Fragment {
         });
 
         return inf;
+    }
+
+    void delete(){
+        sharedPreferences = this.getActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("account", "");
+        AccountModel account = gson.fromJson(json, AccountModel.class);
+
+
+
+        DeleteAccountModel deleteAccountModel = new DeleteAccountModel(account.getUsername());
+
+        AccountServices services = AccountRepository.create();
+        services.delete(deleteAccountModel).enqueue(new Callback<ResponseModel>() {
+            @Override
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
+                if(response.body().getStatus().equals("200")){
+                    SharedPreferences.Editor preferencesEditor = sharedPreferences.edit();
+                    preferencesEditor.putBoolean("isLoggedIn", false);
+                    preferencesEditor.putString("account", "");
+                    preferencesEditor.apply();
+                    openLogout();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
+
+            }
+        });
     }
 }
