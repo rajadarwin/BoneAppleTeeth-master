@@ -112,7 +112,7 @@ public class ProfileFragment extends Fragment {
                 preferencesEditor.putBoolean("isLoggedIn", false);
                 preferencesEditor.putString("account", "");
                 preferencesEditor.apply();
-                
+
                 openLogout();
             }
         });
