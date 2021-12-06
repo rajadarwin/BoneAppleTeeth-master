@@ -124,6 +124,7 @@ public class LoginActivity extends AppCompatActivity{
                         preferencesEditor.putString("account", json);
                         preferencesEditor.apply();
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
                     }
                 }
                 catch(Exception e){
