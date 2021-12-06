@@ -83,6 +83,7 @@ public class ProfileFragment extends Fragment {
     public void openLogout() {
         Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);
+        getActivity().finish();
     }
 
     @Override
