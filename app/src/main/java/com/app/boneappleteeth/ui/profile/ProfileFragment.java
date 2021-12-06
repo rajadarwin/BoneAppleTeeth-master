@@ -1,6 +1,7 @@
 package com.app.boneappleteeth.ui.profile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -10,10 +11,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.app.boneappleteeth.AccountModel;
 import com.app.boneappleteeth.R;
+import com.app.boneappleteeth.ui.login.LoginActivity;
+import com.app.boneappleteeth.ui.register.RegisterActivity;
 import com.google.gson.Gson;
 
 import org.w3c.dom.Text;
@@ -39,6 +43,7 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button button;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -69,6 +74,13 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+    }
+
+    public void openLogout() {
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -89,6 +101,14 @@ public class ProfileFragment extends Fragment {
         tv_name.setText(account.getUsername());
         tv_sosmed.setText(account.getEmail());
         tv_alamat.setText(account.getAlamat());
+
+        button = (Button) inf.findViewById(R.id.logout);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLogout();
+            }
+        });
 
         return inf;
     }
