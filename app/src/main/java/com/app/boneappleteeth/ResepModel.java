@@ -12,8 +12,9 @@ public class ResepModel {
     private List<BahanModel> bahan;
     private float rating;
     private int rating_count;
+    private String author;
 
-    public ResepModel(int id_menu, String nama, String foto, int waktu, int kesulitan, String resep, List<BahanModel> bahan, float rating, int rating_count) {
+    public ResepModel(int id_menu, String nama, String foto, int waktu, int kesulitan, String resep, List<BahanModel> bahan, float rating, int rating_count, String author) {
         this.id_menu = id_menu;
         this.nama = nama;
         this.foto = foto;
@@ -23,6 +24,15 @@ public class ResepModel {
         this.bahan = bahan;
         this.rating = rating;
         this.rating_count = rating_count;
+        this.author = author;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public int getId_menu() {
