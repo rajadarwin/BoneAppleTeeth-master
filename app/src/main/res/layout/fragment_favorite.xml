@@ -93,6 +93,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
+    <Button
+        android:id="@+id/tambah_resep"
+        android:layout_width="171dp"
+        android:layout_height="35dp"
+        android:text="Tambah Resep"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_pencarian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.012" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_pencarian"
         android:layout_width="0dp"
