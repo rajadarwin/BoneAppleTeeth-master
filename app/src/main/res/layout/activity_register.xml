@@ -7,6 +7,16 @@
     android:background="@color/green0"
     tools:context=".ui.register.RegisterActivity">
 
+    <ImageView
+        android:layout_width="194dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/cookie"
+        android:transitionName="foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -14,6 +24,7 @@
         android:layout_marginStart="16dp"
         android:fontFamily="@font/rufina_bold"
         android:text="Membuat Akun"
+        android:transitionName="text"
         android:textColor="@color/black"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/separator"
