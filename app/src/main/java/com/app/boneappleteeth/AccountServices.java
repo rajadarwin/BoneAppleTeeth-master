@@ -16,4 +16,7 @@ public interface AccountServices {
     @POST("/update")
     Call<ResponseModel> update(@Body AccountUpdateModel accountUpdateModel);
 
+    @POST("/delete")
+    Call<ResponseModel> delete(@Body DeleteAccountModel deleteAccountModel);
+
 }
