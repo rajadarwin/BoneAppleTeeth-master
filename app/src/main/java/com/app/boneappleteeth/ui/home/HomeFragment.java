@@ -1,6 +1,11 @@
 package com.app.boneappleteeth.ui.home;
 
+import android.accounts.Account;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +18,14 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.app.boneappleteeth.AccountModel;
+import com.app.boneappleteeth.FullAccountModel;
 import com.app.boneappleteeth.R;
 import com.app.boneappleteeth.databinding.FragmentHomeBinding;
 import com.app.boneappleteeth.ui.home.adapter.HomeAdapter;
 import com.app.boneappleteeth.ui.home.model.News;
+import com.app.boneappleteeth.ui.register.RegisterActivity;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,13 +36,22 @@ public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
     private List<News> newsList = new ArrayList<>();
     private HomeAdapter adapter;
+    private AccountModel account;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+    private SharedPreferences sharedPreferences;
+    private String sharedPrefFile;
+    private Context context;
+    final String PREF_NAME = "ACCOUNT";
 
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        sharedPreferences = this.getActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("account", "");
+        FullAccountModel account = gson.fromJson(json, FullAccountModel.class);
+        Log.d("NAME", account.getUsername());
+        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding.tvName.setText(account.getUsername());
         initAdapter();
         loadData();
         return binding.getRoot();

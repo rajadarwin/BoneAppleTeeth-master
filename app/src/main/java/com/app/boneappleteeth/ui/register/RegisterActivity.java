@@ -4,7 +4,9 @@ import static com.app.boneappleteeth.TextMultipleColor.getColoredSpanned;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.HideReturnsTransformationMethod;
@@ -19,12 +21,14 @@ import android.widget.Toast;
 import com.app.boneappleteeth.AccountModel;
 import com.app.boneappleteeth.AccountRepository;
 import com.app.boneappleteeth.AccountServices;
+import com.app.boneappleteeth.FullAccountModel;
 import com.app.boneappleteeth.MainActivity;
 import com.app.boneappleteeth.PostFactory;
 import com.app.boneappleteeth.R;
 import com.app.boneappleteeth.ResponseModel;
 import com.app.boneappleteeth.databinding.ActivityRegisterBinding;
 import com.app.boneappleteeth.ui.login.LoginActivity;
+import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,10 +40,24 @@ public class RegisterActivity extends AppCompatActivity {
     private boolean visible = false;
     private Button button;
     private EditText et_user, et_email, et_password;
-    final ResponseModel responseModel = new ResponseModel();
+    final String PREF_NAME = "ACCOUNT";
+    private SharedPreferences sharedPreferences;
+    private String sharedPrefFile;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        context = this;
+        sharedPrefFile = context.getPackageName();
+        sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        Boolean loggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+
+
+        if(loggedIn){
+            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+        }
+
         super.onCreate(savedInstanceState);
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -117,6 +135,13 @@ public class RegisterActivity extends AppCompatActivity {
                 try {
                     Log.d("Login status", response.body().getStatus());
                     if(response.body().getStatus().equals("200")){
+                        SharedPreferences.Editor preferencesEditor = sharedPreferences.edit();
+                        Gson gson = new Gson();
+                        FullAccountModel fullAccountModel = new FullAccountModel(account.getUsername(), account.getEmail(), account.getPassword(), account.getFoto(), account.getAlamat(), response.body().getMessage());
+                        String json = gson.toJson(fullAccountModel);
+                        preferencesEditor.putBoolean("isLoggedIn", true);
+                        preferencesEditor.putString("account", json);
+                        preferencesEditor.apply();
                         startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                     }
                     else{

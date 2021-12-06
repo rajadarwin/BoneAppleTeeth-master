@@ -10,4 +10,7 @@ public interface AccountServices {
     @POST("/register")
     Call<ResponseModel>  register(@Body AccountModel accountModel);
 
+    @POST("/login")
+    Call<FullAccountModel>  login(@Body LoginModel loginModel);
+
 }
