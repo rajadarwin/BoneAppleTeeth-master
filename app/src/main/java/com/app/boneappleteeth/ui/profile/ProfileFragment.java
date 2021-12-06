@@ -45,6 +45,8 @@ public class ProfileFragment extends Fragment {
     private String mParam2;
     private Button button;
 
+
+
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -106,6 +108,11 @@ public class ProfileFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor preferencesEditor = sharedPreferences.edit();
+                preferencesEditor.putBoolean("isLoggedIn", false);
+                preferencesEditor.putString("account", "");
+                preferencesEditor.apply();
+                
                 openLogout();
             }
         });
