@@ -1,12 +1,15 @@
 package com.app.boneappleteeth.ui.home.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.app.boneappleteeth.NewsDetailActivity;
 import com.app.boneappleteeth.databinding.ItemNewsBinding;
 import com.app.boneappleteeth.ui.home.model.News;
 
@@ -34,6 +37,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         News news = newsList.get(position);
         holder.binding.tvNews.setText(news.getText());
         holder.binding.ivNews.setImageResource(news.getImagePath());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), NewsDetailActivity.class);
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

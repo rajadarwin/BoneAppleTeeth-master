@@ -4,6 +4,24 @@ public class News {
     private int id;
     private int imagePath;
     private String text;
+    private String nama;
+    private String isi;
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getIsi() {
+        return isi;
+    }
+
+    public void setIsi(String isi) {
+        this.isi = isi;
+    }
 
     public int getId() {
         return id;

@@ -20,6 +20,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.app.boneappleteeth.AccountModel;
 import com.app.boneappleteeth.FullAccountModel;
+import com.app.boneappleteeth.NewsModel;
+import com.app.boneappleteeth.NewsRepository;
+import com.app.boneappleteeth.NewsServices;
 import com.app.boneappleteeth.R;
 import com.app.boneappleteeth.databinding.FragmentHomeBinding;
 import com.app.boneappleteeth.ui.home.adapter.HomeAdapter;
@@ -29,6 +32,10 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
@@ -70,7 +77,30 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadData() {
-        News news = new News();
+        newsList.clear();
+        NewsServices service = NewsRepository.create();
+        service.get().enqueue(new Callback<List<NewsModel>>() {
+            @Override
+            public void onResponse(Call<List<NewsModel>> call, Response<List<NewsModel>> response) {
+                for(NewsModel n : response.body()){
+                    News news = new News();
+                    news.setId(0);
+                    news.setNama(n.getTanggal());
+                    news.setText(n.getJudul());
+                    news.setIsi(n.getIsi());
+                    news.setImagePath(R.drawable.image_sehat);
+                    newsList.add(news);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<NewsModel>> call, Throwable t) {
+
+            }
+        });
+
+        /*News news = new News();
         news.setId(0);
         news.setText("Pertajam kemampuan otak dengan konsumsi 5 makanan ini setiap hari");
         news.setImagePath(R.drawable.image_buah);
@@ -92,7 +122,7 @@ public class HomeFragment extends Fragment {
         news.setId(0);
         news.setText("Ayo olahraga agar tubuh sehat kuat");
         news.setImagePath(R.drawable.image_sehat);
-        newsList.add(news);
+        newsList.add(news);*/
 
         adapter.notifyDataSetChanged();
     }
