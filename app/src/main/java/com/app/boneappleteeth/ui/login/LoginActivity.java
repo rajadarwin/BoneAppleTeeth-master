@@ -93,6 +93,7 @@ public class LoginActivity extends AppCompatActivity{
     public void openRegister() {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
+        finish();
     }
 
     void login(){
