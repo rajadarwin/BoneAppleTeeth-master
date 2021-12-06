@@ -1,14 +1,22 @@
 package com.app.boneappleteeth.ui.profile;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.app.boneappleteeth.AccountModel;
 import com.app.boneappleteeth.R;
+import com.google.gson.Gson;
+
+import org.w3c.dom.Text;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +24,11 @@ import com.app.boneappleteeth.R;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
+
+    TextView tv_name;
+    TextView tv_sosmed;
+    private SharedPreferences sharedPreferences;
+    final String PREF_NAME = "ACCOUNT";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +74,19 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View inf = inflater.inflate(R.layout.fragment_profile, container, false);
+        sharedPreferences = this.getActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("account", "");
+        AccountModel account = gson.fromJson(json, AccountModel.class);
+        Log.d("NAME", account.getUsername());
+
+        tv_name = inf.findViewById(R.id.tv_name);
+        tv_sosmed = inf.findViewById(R.id.tv_sosmed);
+
+        tv_name.setText(account.getUsername());
+        tv_sosmed.setText(account.getEmail());
+
+        return inf;
     }
 }
