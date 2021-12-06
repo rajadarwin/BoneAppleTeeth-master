@@ -32,7 +32,7 @@
             android:layout_marginBottom="16dp">
 
             <EditText
-                android:id="@+id/nama_resep"
+                android:id="@+id/et_nama_resep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nama Resep"
@@ -59,13 +59,13 @@
             android:layout_marginBottom="16dp">
 
             <EditText
-                android:id="@+id/isi_resep1"
+                android:id="@+id/et_resep"
                 android:layout_width="match_parent"
                 android:layout_height="136dp"
                 android:textSize="16sp"
                 android:hint="Tulis resepmu (alat, bahan, dan langkah)"
-                android:inputType="textCapSentences"
-                android:maxLines="10" />
+                android:inputType="textMultiLine"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
@@ -88,7 +88,7 @@
             android:layout_marginBottom="16dp">
 
             <EditText
-                android:id="@+id/isi_resep"
+                android:id="@+id/et_waktu"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:hint="Berapa lama untuk membuatnya?"

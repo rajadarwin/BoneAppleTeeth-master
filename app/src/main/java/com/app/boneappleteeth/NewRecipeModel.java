@@ -2,12 +2,12 @@ package com.app.boneappleteeth;
 
 public class NewRecipeModel {
     String nama;
-    String waktu;
+    int waktu;
     int kesulitan;
     String resep;
     String author;
 
-    public NewRecipeModel(String nama, String waktu, int kesulitan, String resep, String author) {
+    public NewRecipeModel(String nama, int waktu, int kesulitan, String resep, String author) {
         this.nama = nama;
         this.waktu = waktu;
         this.kesulitan = kesulitan;
@@ -23,11 +23,11 @@ public class NewRecipeModel {
         this.nama = nama;
     }
 
-    public String getWaktu() {
+    public int getWaktu() {
         return waktu;
     }
 
-    public void setWaktu(String waktu) {
+    public void setWaktu(int waktu) {
         this.waktu = waktu;
     }
 
