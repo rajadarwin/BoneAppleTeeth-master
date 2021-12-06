@@ -68,8 +68,8 @@ public class FoodActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        nama_resep = extras.getString("NAMA");
-        waktu_resep = extras.getString("MENIT");
+        //nama_resep = extras.getString("NAMA");
+        //waktu_resep = extras.getString("MENIT");
         id_resep = extras.getInt("ID");
 
         Log.d("ID", String.valueOf(id_resep));

@@ -11,36 +11,112 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:background="@color/green0"
-        tools:context=".Activity.InsertActivity">
-
+        tools:context=".Activity.TambahResepActivity">
+        <TextView
+            android:id="@+id/nama_resep1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/rufina_bold"
+            android:text="Nama Resep :"
+            android:transitionName="text"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.201" />
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp">
 
             <EditText
-                android:id="@+id/edt_name"
+                android:id="@+id/nama_resep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nama Resep"
                 android:inputType="textCapSentences"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
-
+        <TextView
+            android:id="@+id/resepmu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/rufina_bold"
+            android:text="Resepmu :"
+            android:transitionName="text"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.201" />
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp">
 
             <EditText
-                android:id="@+id/edt_description"
+                android:id="@+id/isi_resep1"
                 android:layout_width="match_parent"
                 android:layout_height="136dp"
-                android:hint="Tulis resepmu di sini"
+                android:textSize="16sp"
+                android:hint="Tulis resepmu (alat, bahan, dan langkah)"
                 android:inputType="textCapSentences"
                 android:maxLines="10" />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/waktu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/rufina_bold"
+            android:text="Waktu:"
+            android:transitionName="text"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.201" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/isi_resep"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:hint="Berapa lama untuk membuatnya?"
+                android:inputType="textCapSentences"
+                android:maxLines="10"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/rufina_bold"
+            android:text="Tingkat Kesulitan :"
+            android:transitionName="text"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.201" />
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

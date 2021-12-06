@@ -24,6 +24,11 @@
             android:label="@string/app_name">
         </activity>
         <activity
+            android:name=".ui.tambahresep.TambahResepActivity"
+            android:exported="false"
+            android:label="@string/app_name">
+        </activity>
+        <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashScreenStyle"
             android:exported="true">
