@@ -89,6 +89,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 if(response.body().getStatus().equals("200")){
                     Toast.makeText(EditProfileActivity.this, "Successfully updated account detail", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(EditProfileActivity.this, MainActivity.class));
+                    finish();
                 }
             }
 
