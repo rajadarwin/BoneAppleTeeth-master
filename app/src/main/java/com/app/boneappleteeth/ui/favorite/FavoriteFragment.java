@@ -45,7 +45,6 @@ public class FavoriteFragment extends Fragment {
         binding = null;
     }
 
-
     private void initAdapter() {
         binding.rvPencarian.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new FavoriteAdapter(getContext(), favoriteList);
