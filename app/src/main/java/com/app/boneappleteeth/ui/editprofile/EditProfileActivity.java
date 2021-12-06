@@ -107,7 +107,7 @@ public class EditProfileActivity extends AppCompatActivity {
             isValid = false;
         }
         if (alamat.isEmpty()) {
-            et_edit_alamat.setError("Username should not be empty");
+            et_edit_alamat.setError("Alamat should not be empty");
             isValid = false;
         }
         if (email.isEmpty()) {
