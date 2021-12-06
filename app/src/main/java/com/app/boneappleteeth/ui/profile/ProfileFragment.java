@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.app.boneappleteeth.AccountModel;
 import com.app.boneappleteeth.R;
+import com.app.boneappleteeth.ui.editprofile.EditProfileActivity;
 import com.app.boneappleteeth.ui.login.LoginActivity;
 import com.app.boneappleteeth.ui.register.RegisterActivity;
 import com.google.gson.Gson;
@@ -44,6 +45,7 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private Button button;
+    private Button buttonEdit;
 
 
 
@@ -86,6 +88,12 @@ public class ProfileFragment extends Fragment {
         getActivity().finish();
     }
 
+    public void openEditProfile() {
+        Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -115,6 +123,14 @@ public class ProfileFragment extends Fragment {
                 preferencesEditor.apply();
 
                 openLogout();
+            }
+        });
+
+        buttonEdit = (Button) inf.findViewById(R.id.edit_profile);
+        buttonEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openEditProfile();
             }
         });
 
