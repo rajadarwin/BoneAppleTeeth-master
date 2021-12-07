@@ -55,10 +55,10 @@ public class HomeFragment extends Fragment {
         sharedPreferences = this.getActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         Boolean loggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
         Log.d("IsLoggedIn", "onCreateView: " + loggedIn.toString());
-        if (!loggedIn) {
-            startActivity(new Intent(getContext(), RegisterActivity.class));
-            getActivity().finish();
-        }
+//        if (!loggedIn) {
+//            startActivity(new Intent(getContext(), RegisterActivity.class));
+//            getActivity().finish();
+//        }
         Gson gson = new Gson();
         String json = sharedPreferences.getString("account", "");
         FullAccountModel account = gson.fromJson(json, FullAccountModel.class);

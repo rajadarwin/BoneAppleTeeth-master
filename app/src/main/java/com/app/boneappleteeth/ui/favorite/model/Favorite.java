@@ -11,6 +11,17 @@ public class Favorite {
         return id;
     }
 
+    @Override
+    public String toString() {
+        return "Favorite{" +
+                "id=" + id +
+                ", imagePath=" + imagePath +
+                ", title='" + title + '\'' +
+                ", menit='" + menit + '\'' +
+                ", isFavorite=" + isFavorite +
+                '}';
+    }
+
     public void setId(int id) {
         this.id = id;
     }
