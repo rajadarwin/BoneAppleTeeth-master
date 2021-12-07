@@ -1,9 +1,13 @@
 package com.app.boneappleteeth;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Debug;
 import android.util.Log;
 
+import com.app.boneappleteeth.ui.login.LoginActivity;
+import com.app.boneappleteeth.ui.register.RegisterActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,12 +29,24 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
+    final String PREF_NAME = "ACCOUNT";
+    private SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        Boolean loggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+
+
+        if (loggedIn) {
+            startActivity(new Intent(this, RegisterActivity.class));
+            finish();
+        }
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
