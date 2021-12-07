@@ -37,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         Boolean loggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+        Log.d("IsLoggedIn", "onCreateView: " + loggedIn.toString());
 
-
-        if (!loggedIn) {
-            startActivity(new Intent(this, RegisterActivity.class));
-            finish();
-        }
+//        if (!loggedIn) {
+//            startActivity(new Intent(this, RegisterActivity.class));
+//            finish();
+//        }
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());

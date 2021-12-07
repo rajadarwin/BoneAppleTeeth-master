@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -118,6 +119,11 @@ public class LoginActivity extends AppCompatActivity{
                     }
                     if(response.isSuccessful()) {
                         FullAccountModel account = response.body();
+                        if(account.getEmail() == null){
+                            et_username.setError("Invalid credentials!");
+                            return;
+                        }
+                        Log.d("Response body:", account.toString());
                         SharedPreferences.Editor preferencesEditor = sharedPreferences.edit();
                         Gson gson = new Gson();
                         String json = gson.toJson(account);
@@ -126,6 +132,8 @@ public class LoginActivity extends AppCompatActivity{
                         preferencesEditor.apply();
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();
+                    }else{
+                        et_username.setError("Invalid credentials!");
                     }
                 }
                 catch(Exception e){

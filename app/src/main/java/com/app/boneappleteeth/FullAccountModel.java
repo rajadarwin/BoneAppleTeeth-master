@@ -5,6 +5,19 @@ public class FullAccountModel {
     String email;
     String password;
     String foto;
+
+    @Override
+    public String toString() {
+        return "FullAccountModel{" +
+                "username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", foto='" + foto + '\'' +
+                ", alamat='" + alamat + '\'' +
+                ", user_key='" + user_key + '\'' +
+                '}';
+    }
+
     String alamat;
     String user_key;
 

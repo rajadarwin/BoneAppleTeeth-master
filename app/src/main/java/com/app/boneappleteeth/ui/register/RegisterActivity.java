@@ -70,10 +70,10 @@ public class RegisterActivity extends AppCompatActivity {
         Boolean loggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
 
 
-        if (loggedIn) {
-            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-            finish();
-        }
+//        if (loggedIn) {
+//            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+//            finish();
+//        }
 
         super.onCreate(savedInstanceState);
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
