@@ -54,6 +54,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         sharedPreferences = this.getActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         Boolean loggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+        Log.d("IsLoggedIn", "onCreateView: " + loggedIn.toString());
         if (!loggedIn) {
             startActivity(new Intent(getContext(), RegisterActivity.class));
             getActivity().finish();
@@ -61,7 +62,13 @@ public class HomeFragment extends Fragment {
         Gson gson = new Gson();
         String json = sharedPreferences.getString("account", "");
         FullAccountModel account = gson.fromJson(json, FullAccountModel.class);
-        Log.d("NAME", account.getUsername());
+        try {
+            Log.d("NAME", account.getUsername());
+        }
+        catch (Exception e){
+            startActivity(new Intent(getContext(), RegisterActivity.class));
+            getActivity().finish();
+        }
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         binding.tvName.setText(account.getUsername());
