@@ -37,17 +37,17 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
 
         holder.binding.ivResep.setImageResource(search.getImagePath());
 
-        if((position+1) % 2 != 0) {
+        /*if((position+1) % 2 != 0) {
             holder.binding.clLikeLeft.setVisibility(View.VISIBLE);
             holder.binding.clLikeRight.setVisibility(View.GONE);
             holder.binding.tvTitleLeft.setText(search.getTitle());
             holder.binding.tvTitleLeft.setText(search.getMenit());
-        } else {
+        } else {*/
             holder.binding.clLikeRight.setVisibility(View.VISIBLE);
             holder.binding.clLikeLeft.setVisibility(View.GONE);
             holder.binding.tvTitle.setText(search.getTitle());
             holder.binding.tvMenit.setText(search.getMenit());
-        }
+        //}
 
         holder.binding.tvTitle.setText(search.getTitle());
         holder.binding.tvMenit.setText(search.getMenit());
@@ -56,7 +56,9 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, FoodActivity.class));
+                Intent intent = new Intent(context, FoodActivity.class);
+                intent.putExtra("ID", search.getId());
+                context.startActivity(intent);
             }
         });
     }

@@ -52,6 +52,12 @@ public class LoginActivity extends AppCompatActivity{
         setContentView(binding.getRoot());
 
         sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        Boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+
+        if(isLoggedIn){
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
 
         button = (Button) findViewById(R.id.tv_register);
         button.setOnClickListener(new View.OnClickListener() {

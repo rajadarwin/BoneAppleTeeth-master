@@ -11,6 +11,23 @@ public class ResepModel {
     private String resep;
     private List<BahanModel> bahan;
     private float rating;
+
+    @Override
+    public String toString() {
+        return "ResepModel{" +
+                "id_menu=" + id_menu +
+                ", nama='" + nama + '\'' +
+                ", foto='" + foto + '\'' +
+                ", waktu=" + waktu +
+                ", kesulitan=" + kesulitan +
+                ", resep='" + resep + '\'' +
+                ", bahan=" + bahan +
+                ", rating=" + rating +
+                ", rating_count=" + rating_count +
+                ", author='" + author + '\'' +
+                '}';
+    }
+
     private int rating_count;
     private String author;
 

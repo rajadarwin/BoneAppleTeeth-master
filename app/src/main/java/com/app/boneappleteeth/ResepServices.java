@@ -15,6 +15,9 @@ public interface ResepServices {
     @GET("resep/{id}")
     Call<List<ResepModel>> getResepId(@Path("id") int id);
 
+    @GET("resepuser/{username}")
+    Call<List<ResepModel>> getUserResep(@Path("username") String username);
+
     @POST("resep")
     Call<ResponseModel> addResep(@Body NewRecipeModel newRecipeModel);
 }
