@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Boolean loggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
 
 
-        if (loggedIn) {
+        if (!loggedIn) {
             startActivity(new Intent(this, RegisterActivity.class));
             finish();
         }

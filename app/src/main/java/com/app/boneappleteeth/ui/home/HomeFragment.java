@@ -2,6 +2,7 @@ package com.app.boneappleteeth.ui.home;
 
 import android.accounts.Account;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -52,6 +53,11 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         sharedPreferences = this.getActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        Boolean loggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+        if (!loggedIn) {
+            startActivity(new Intent(getContext(), RegisterActivity.class));
+            getActivity().finish();
+        }
         Gson gson = new Gson();
         String json = sharedPreferences.getString("account", "");
         FullAccountModel account = gson.fromJson(json, FullAccountModel.class);
